@@ -44,7 +44,7 @@ print(f"\nFuture Value: ${future_value:,.2f}")
 print(f"Investment Return: ${investment_return:,.2f}")
 
 print(f"\nWe hope to achieve your goal. Thank you for investing with us, {name}!")
-print("I'll also share with you the other option that we have which includes dividends, but with lower yield")
+print("I'll also share with you the other option that we have which includes dividends, but with lower yield.")
 
 # PART 5: INVESTMENT OPTIONS
 
