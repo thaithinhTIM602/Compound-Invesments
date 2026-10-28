@@ -16,7 +16,7 @@ print("\nLet's calculate how your money can grow!")
 
 principal = float(input("How much money are you investing? $"))
 
-rate = float(input("What is your required return annually (%)? "))
+rate = float(input("What is your desired return annually (%)? "))
 
 years = int(input("How many years will you invest? "))
 
