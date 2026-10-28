@@ -8,7 +8,7 @@ print(f"\nGood to see you, {name}!")
 mood = input("How are you doing today? ")
 
 print(f"\nThanks for sharing, {name}!")
-print("Welcome to your TTD Invesment LLC.!")
+print("Welcome to TTD Invesment LLC.!")
 
 # PART 2: INVESTMENT INFORMATION
 
@@ -16,7 +16,7 @@ print("\nLet's calculate how your money can grow!")
 
 principal = float(input("How much money are you investing? $"))
 
-rate = float(input("What is the annual interest rate (%)? "))
+rate = float(input("What is your required return annually (%)? "))
 
 years = int(input("How many years will you invest? "))
 
@@ -28,8 +28,8 @@ rate = rate / 100
 # Calculate future value (compounded annually)
 future_value = principal * (1 + rate) ** years
 
-# Calculate interest earned
-interest_earned = future_value - principal
+# Calculate investment return
+investment_return = future_value - principal
 
 # PART 4: DISPLAY RESULTS
 
@@ -41,7 +41,7 @@ print(f"Investment Period: {years} years")
 print(f"Annual Interest Rate: {rate * 100:.2f}%")
 
 print(f"\nFuture Value: ${future_value:,.2f}")
-print(f"Interest Earned: ${interest_earned:,.2f}")
+print(f"Investment Return: ${investment_return:,.2f}")
 
-print(f"\nThank you for using the calculator, {name}!")
+print(f"\nWe hope to achieve your goal. Thank you for investing with us, {name}!")
 
