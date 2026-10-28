@@ -110,4 +110,5 @@ elif choice == "2":
 else:
     print("Invalid choice. Please enter 1 or 2.")
 
-
+		print("Thank you for taking us into consideration, please let us your decision know as soon as possible")
+		print("Hope to see you again soon, {name}.")
