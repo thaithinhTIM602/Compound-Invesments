@@ -1,0 +1,113 @@
+
+# PART 1: GREETING
+
+name = input("Hello! What is your name? ")
+
+print(f"\nGood to see you, {name}!")
+
+mood = input("How are you doing today? ")
+
+print(f"\nThanks for sharing, {name}!")
+print("Welcome to TTD Invesment LLC.!")
+
+# PART 2: INVESTMENT INFORMATION
+
+print("\nLet's calculate how your money can grow!")
+
+principal = float(input("How much money are you investing? $"))
+
+rate = float(input("What is your required return annually (%)? "))
+
+years = int(input("How many years will you invest? "))
+
+# PART 3: COMPOUND INTEREST CALCULATION
+
+# Convert percentage to decimal
+rate = rate / 100
+
+# Calculate future value (compounded annually)
+future_value = principal * (1 + rate) ** years
+
+# Calculate investment return
+investment_return = future_value - principal
+
+# PART 4: DISPLAY RESULTS
+
+print("\n===== INVESTMENT REPORT =====")
+
+print(f"Investor: {name}")
+print(f"Initial Investment: ${principal:,.2f}")
+print(f"Investment Period: {years} years")
+print(f"Annual Interest Rate: {rate * 100:.2f}%")
+
+print(f"\nFuture Value: ${future_value:,.2f}")
+print(f"Investment Return: ${investment_return:,.2f}")
+
+print(f"\nWe hope to achieve your goal. Thank you for investing with us, {name}!")
+print("I'll also share with you the other option that we have which includes dividends, but with lower yield")
+
+# PART 5: INVESTMENT OPTIONS
+
+print("\n===== INVESTMENT OPTIONS =====")
+
+print("Option 1: Growth Investment (No Dividend)")
+print("Option 2: Dividend Investment (50% Growth + 50% Dividend)")
+
+choice = input("\nWhich investment would you like? (1 or 2): ")
+
+if choice == "1":
+
+    print("\n===== GROWTH INVESTMENT =====")
+
+    growth_value = principal * (1 + rate) ** years
+    growth_profit = growth_value - principal
+
+    print(f"Annual Growth Rate: {rate * 100:.2f}%")
+    print(f"Future Investment Value: ${growth_value:,.2f}")
+    print(f"Total Investment Return: ${growth_profit:,.2f}")
+
+elif choice == "2":
+
+    print("\n===== DIVIDEND INVESTMENT =====")
+
+    # Half the required return goes to price growth
+    growth_rate = rate / 2
+
+    # Half the required return goes to dividends
+    dividend_yield = rate / 2
+
+    # Investment value after price growth
+    dividend_stock_value = principal * (1 + growth_rate) ** years
+
+    # Total dividends received, assuming annual cash payouts
+    # and a constant yield on each year's beginning value
+    total_dividends = 0
+    current_value = principal
+
+    for year in range(1, years + 1):
+
+        annual_dividend = current_value * dividend_yield
+
+        total_dividends += annual_dividend
+
+        current_value = current_value * (1 + growth_rate)
+
+    # Total wealth includes stock value and cash dividends
+    total_wealth = dividend_stock_value + total_dividends
+
+    # Total investment profit
+    dividend_profit = total_wealth - principal
+
+    print(f"Annual Growth Rate: {growth_rate * 100:.2f}%")
+    print(f"Annual Dividend Yield: {dividend_yield * 100:.2f}%")
+
+    print(f"\nFinal Stock Value: ${dividend_stock_value:,.2f}")
+    print(f"Total Cash Dividends: ${total_dividends:,.2f}")
+
+    print(f"\nTotal Investment Wealth: ${total_wealth:,.2f}")
+    print(f"Total Investment Return: ${dividend_profit:,.2f}")
+
+else:
+    print("Invalid choice. Please enter 1 or 2.")
+
+
